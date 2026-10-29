@@ -238,7 +238,7 @@
             height: 32px;
             background: var(--accent);
             border-radius: 10px;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
@@ -1467,6 +1467,9 @@
                 if (installBtn) installBtn.style.setProperty('display', 'none', 'important');
                 return true;
             }
+            if (installBtn) {
+                installBtn.style.setProperty('display', 'flex', 'important');
+            }
             return false;
         }
 
@@ -1490,6 +1493,8 @@
                     }
                     deferredPrompt = null;
                 });
+            } else {
+                alert("لتثبيت التطبيق: اضغط على زر (المشاركة أو الخيارات) في متصفحك، ثم اختر (إضافة إلى الشاشة الرئيسية).");
             }
         }
 
