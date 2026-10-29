@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -2459,7 +2459,8 @@
                 `💰 *الإجمالي الكلي:* ${currentTotal} ج.م` + (selectedDeliveryAreaObj && selectedDeliveryAreaObj.isCustom ? ' (يضاف سعر التوصيل بالاتفاق مع المطعم)' : '')
             );
 
-            window.open(`https://wa.me/${purePhone}?text=${textMsg}`, '_blank');
+            // تحويل المستخدم فوراً للواتساب بدلاً من فتح نافذة منبثقة
+            window.location.href = `https://wa.me/${purePhone}?text=${textMsg}`;
 
             toggleCart(false);
             cart = [];
