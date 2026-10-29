@@ -1,4 +1,4 @@
-const CACHE_NAME = 'crepe-hekaya-v1';
+const CACHE_NAME = 'crepe-hekaya-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

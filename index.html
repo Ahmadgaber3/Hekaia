@@ -1129,7 +1129,7 @@
                         <span style="font-size: 1.25rem;">🛒</span>
                     </div>
                 </div>
-                <button class="install-pwa-btn" id="installPwaBtn" onclick="triggerUniversalInstall()">
+                <button class="install-pwa-btn" id="installPwaBtn" onclick="triggerUniversalInstall()" style="display: flex !important;">
                     <span>📲</span>
                     <span>تثبيت</span>
                 </button>
@@ -1482,7 +1482,7 @@
         });
 
         function triggerUniversalInstall() {
-            if (checkAndHandleInstallBtn()) return;
+            if (isRunningInsidePWA() || localStorage.getItem('app_installed_locally') === 'true') return;
 
             if (deferredPrompt) {
                 deferredPrompt.prompt();
@@ -1494,7 +1494,7 @@
                     deferredPrompt = null;
                 });
             } else {
-                alert("لتثبيت التطبيق: اضغط على زر (المشاركة أو الخيارات) في متصفحك، ثم اختر (إضافة إلى الشاشة الرئيسية).");
+                alert("لتثبيت التطبيق على موبايلك:\n\n1. اضغط على الثلاث نقاط (⋮) في أعلى المتصفح.\n2. اختر (تثبيت التطبيق) أو (Add to Home screen).");
             }
         }
 
